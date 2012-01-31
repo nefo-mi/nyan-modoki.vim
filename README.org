@@ -1,0 +1,10 @@
+* Nyan Modoki
+  Nyan Modoki is an analog indicator of you position in the buffer.
+  The Cat*Modoki* should go from left to right in you statusline, as you move your point from 0% to 100%
+  NOT INCLUDED: animation, music.
+* Using
+  set laststatus=2
+  set statusline=%{g:NyanModoki()}
+* Credits
+  Code and idea inspired by nyan-mode.el, writen by TeMPOraL.
+  SEE ALSO Nyan Mode: https://github.com/TeMPOraL/nyan-mode
