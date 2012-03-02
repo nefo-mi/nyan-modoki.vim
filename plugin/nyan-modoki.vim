@@ -19,7 +19,7 @@ function! g:NyanModoki()
   let s:anim = get(g:, "nayn_modoki_animation_enabled", 0)
   if s:anim >= 1
     let nyanpos = get(w:, "nyanpos", -1) + 1
-    let nyanpos = nyanpos % 2
+    let nyanpos = nyanpos % len(s:catface[s:catnum])
     let w:['nyanpos'] = nyanpos
   else
      let nyanpos = 0
