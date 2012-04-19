@@ -1,18 +1,15 @@
 scriptencoding utf-8
 
-if !has('unix') || ($VTE_CJK_WIDTH != '' && &ambiwidth == 'double')
-  let s:catface = [
-  \ ['[]*','[]#'],
-  \ ['(*^ｰﾟ)','( ^ｰ^)','(^ｰ^ )','(ﾟｰ^*)'],
-  \ ['(´д｀;)','( ´д`;)','( ;´д`)','(;´д` )']]
-else
-  let s:catface = [
-  \ ['[]*','[]#'],
-  \ ['(*^ｰﾟ)','( ^ｰ^)','(^ｰ^ )','(ﾟｰ^*)'],
-  \ ['(´ д｀; )','( ´ д `;)','( ;´ д `)','(;´ д ` )']]
-endif
-
-let s:sing = ['', 'ﾆｬﾝ', 'ﾊｧﾊｧ']
+let s:catface = [
+        \ ['[]*','[]#'],
+        \ ['(*^ｰﾟ)ﾆｬﾝ','( ^ｰ^)ﾆｬﾝ','ﾆｬﾝ(^ｰ^ )','ﾆｬﾝ(ﾟｰ^*)'],
+        \ ['(´ω｀三   )みょく ', '( ´ω三｀  )みょく ', '(  ´三ω｀ )みょく ', '(   三´ω｀)みょく ', 
+        \  '(   三´ω｀)みょく ', '(  ´三ω｀ )みょく ', '( ´ω三｀  )みょく ', '(´ω｀三   )みょく '], 
+        \ ['ﾊｧﾊｧ(´д｀;)','( ´д`;)ﾊｧﾊｧ','( ;´д`)ﾊｧﾊｧ','(;´д` )ﾊｧﾊｧ'],
+        \ ['(」・ω・)」うー！　', '(／・ω・)／にゃー！', '(」・ω・)」うー！　', '(／・ω・)／にゃー！', 
+        \  '(」・ω・)」うー！　', '(／・ω・)／にゃー！', '(」・ω・)」うー！　', "Let's＼(・ω・)／にゃー！"], 
+        \ ['┌(┌　^ o^)┐　', '┌(　┐^ o^)┐　', '　┐ ┐^ o^)┐　', '三┌(┌　^ o^)　', '　┌(┌　^ o^)┐']
+\ ]
 
 function! g:NyanModoki()
   let s:catnum = get(g:, "nyan_modoki_select_cat_face_number", 0)
@@ -24,8 +21,8 @@ function! g:NyanModoki()
   else
      let nyanpos = 0
   endif
-  let s:maxlen = winwidth(0) / 2 - strlen(s:catface[s:catnum][nyanpos]) - strlen(s:sing[s:catnum])
+  let s:maxlen = winwidth(0) / 2 - strlen(s:catface[s:catnum][nyanpos])
   let s:cur = line(".") * s:maxlen / line("$") - 1
   let s:fil = s:maxlen - s:cur - 1
-  return " ".repeat("|", s:cur).s:catface[s:catnum][nyanpos].s:sing[s:catnum].repeat("-", s:fil)." "
+  return " ".repeat("|", s:cur).s:catface[s:catnum][nyanpos].repeat("-", s:fil)." "
 endfunction
