@@ -13,7 +13,7 @@ let s:catface = [
 
 function! g:NyanModoki()
   let s:catnum = get(g:, "nyan_modoki_select_cat_face_number", 0)
-  let s:anim = get(g:, "nayn_modoki_animation_enabled", 0)
+  let s:anim = get(g:, "nayn_modoki_animation_enabled", 1)
   if s:anim >= 1
     let nyanpos = get(w:, "nyanpos", -1) + 1
     let nyanpos = nyanpos % len(s:catface[s:catnum])

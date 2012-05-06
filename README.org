@@ -10,7 +10,8 @@
 
   set statusline=%{g:NyanModoki()}
 
-  let g:nyan_modoki_select_cat_face_number = 0
+  let g:nyan_modoki_select_cat_face_number = 2
+   let g:nayn_modoki_animation_enabled= 1
 
 * Credits
   idea inspired by nyan-mode.el, writen by TeMPOraL.
